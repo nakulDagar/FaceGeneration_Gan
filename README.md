@@ -6,7 +6,7 @@ This project implements a **Generative Adversarial Network (GAN)** using TensorF
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 ├── main.py                     # Load generator & generate sample images
 ├── main.ipynb                   # Contains build_generator() and build_discriminator() and Custom training step function
 ├── requirements.txt            # Python dependencies
@@ -28,7 +28,7 @@ Core Libraries Used:
 	•	tqdm
 	•	time, os (standard libraries)
 
- 🧠 Model Architecture
+# 🧠 Model Architecture
 
 Generator (Upsampling: 100-dim → 128×128×3)
 - Dense(8×8×512) → Reshape → BatchNorm → LeakyReLU
@@ -40,12 +40,12 @@ Discriminator (Downsampling: 128×128×3 → binary output)
 - LeakyReLU + Dropout after each layer
 - Flatten → Dense(1) logit output
 
-🧪 Training Strategy
+## 🧪 Training Strategy
 
 The models were trained adversarially using a custom training loop in TensorFlow:
 
-Loss Functions:
-# Binary crossentropy loss
+# Loss Functions:
+Binary crossentropy loss
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 
 def generator_loss(fake_output):
@@ -55,7 +55,7 @@ def discriminator_loss(real_output, fake_output):
     return cross_entropy(tf.ones_like(real_output), real_output) + \
            cross_entropy(tf.zeros_like(fake_output), fake_output)
 
-Training Step:
+# Training Step:
 def train_step(real_images):
     noise = tf.random.normal([BATCH_SIZE, NOISE_DIM])
     ...
@@ -64,12 +64,12 @@ def train_step(real_images):
     ...
     # Apply gradients to both networks
     
-Optimizers:
+# Optimizers:
 
 gen_optimizer = tf.keras.optimizers.Adam(1e-4)
 disc_optimizer = tf.keras.optimizers.Adam(1e-4)
 
-📈 Training Summary
+# 📈 Training Summary
 Parameter                    Value
 
 Dataset                      CelebA
@@ -81,7 +81,7 @@ Loss Function           Binary Crossentropy
 Optimizer                  Adam (1e-4)
 Framework               TensorFlow 2.16.2
 
-🙌 Acknowledgements
+# 🙌 Acknowledgements
 	•	Ian Goodfellow et al., GAN Paper (2014)
 	•	TensorFlow & Keras Teams
 	•	CelebA Dataset
