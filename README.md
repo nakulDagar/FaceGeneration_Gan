@@ -46,6 +46,7 @@ The models were trained adversarially using a custom training loop in TensorFlow
 
 # Loss Functions:
 Binary crossentropy loss
+```python
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 
 def generator_loss(fake_output):
@@ -68,7 +69,7 @@ def train_step(real_images):
 
 gen_optimizer = tf.keras.optimizers.Adam(1e-4)
 disc_optimizer = tf.keras.optimizers.Adam(1e-4)
-
+```
 # 📈 Training Summary
 Parameter                    Value
 
