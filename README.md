@@ -5,15 +5,15 @@ This project implements a **Generative Adversarial Network (GAN)** using TensorF
 <img width="721" height="662" alt="Screenshot 2025-07-27 at 11 32 15 PM" src="https://github.com/user-attachments/assets/be7a1e4c-9507-470e-9747-cf841e8e41ad" />
 
 ---
-
+```
 # 📂 Project Structure
 ├── main.py                     # Load generator & generate sample images
 ├── main.ipynb                   # Contains build_generator() and build_discriminator() and Custom training step function
 ├── requirements.txt            # Python dependencies
 ├── .gitignore                  # Ignore virtualenvs, checkpoints, caches
 └── README.md                   # You’re here!
+```
 ---
-
 ## 📦 Dependencies
 
 Install dependencies from the `requirements.txt`:
@@ -43,10 +43,9 @@ Discriminator (Downsampling: 128×128×3 → binary output)
 ## 🧪 Training Strategy
 
 The models were trained adversarially using a custom training loop in TensorFlow:
-
-# Loss Functions:
-Binary crossentropy loss
 ```python
+#Loss Functions:
+#Binary crossentropy loss
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 
 def generator_loss(fake_output):
@@ -70,6 +69,7 @@ def train_step(real_images):
 gen_optimizer = tf.keras.optimizers.Adam(1e-4)
 disc_optimizer = tf.keras.optimizers.Adam(1e-4)
 ```
+```txt
 # 📈 Training Summary
 Parameter                    Value
 
@@ -81,7 +81,7 @@ Batch Size               128(customizable)
 Loss Function           Binary Crossentropy
 Optimizer                  Adam (1e-4)
 Framework               TensorFlow 2.16.2
-
+```
 # 🙌 Acknowledgements
 	•	Ian Goodfellow et al., GAN Paper (2014)
 	•	TensorFlow & Keras Teams
