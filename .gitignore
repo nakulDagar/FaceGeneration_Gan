@@ -1,0 +1,34 @@
+gan-env
+img_align_celeba
+.ipynb_checkpoints
+.DS_Store
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+*.log
+
+# Virtual Environment
+venv/
+gan-env/
+.env/
+env/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
